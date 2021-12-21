@@ -20,6 +20,21 @@ body {
   background-color: var(--Pale-blue);
   color: var(--Desaturated-blue);
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+}
+.background-image {
+  background: url("images/pattern-background-mobile.svg") no-repeat center/cover;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 img {
   max-width: 100%;
@@ -59,10 +74,17 @@ img {
   color: var(--Dark-blue);
   font-weight: 700;
 }
-.summary ul li:nth-child(3) {
+.summary ul li button {
   color: var(--Bright-blue);
+  background-color: var(--Very-pale-blue);
+  border: none;
   font-weight: 700;
   text-decoration: underline;
+}
+.summary ul li button:hover {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.6;
 }
 .payment {
   display: flex;
@@ -71,19 +93,32 @@ img {
   row-gap: 20px;
   padding: 20px 0 30px 0;
 }
-
-.payment p:nth-child(1) {
+.payment button {
+  border: none;
+  cursor: pointer;
+}
+.payment button:nth-child(1) {
   background-color: var(--Bright-blue);
   color: var(--Very-pale-blue);
   padding: 15px 60px 15px 60px;
   border-radius: 10px;
-  font-weight: 700;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  font-weight: 900;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
-.payment p:nth-child(2) {
-  font-weight: 700;
+.payment button:nth-child(1):hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.payment button:nth-child(2) {
+  padding-top: 5px;
+  font-weight: 900;
+  color: hsl(224, 23%, 55%);
+  background-color: none;
+}
+.payment button:nth-child(2):hover {
+  color: var(--Dark-blue);
+  cursor: pointer;
 }
 .attribution {
   font-size: 11px;
@@ -91,4 +126,17 @@ img {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media (min-width: 650px) {
+  .background-image {
+    background: url("images/pattern-background-desktop.svg") no-repeat
+      center/cover;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 }
